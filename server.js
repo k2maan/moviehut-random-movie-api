@@ -3,6 +3,8 @@ const dotenv = require("dotenv")
 const cors = require("cors")
 const morgan = require("morgan")
 const connectDB = require("./config/db")
+const cors = require("cors")
+const rateLimit = require("express-rate-limit")
 
 const app = express()
 
@@ -22,10 +24,28 @@ app.listen(PORT, () => {
     console.log(`SERVER RUNNING IN ${process.env.NODE_ENV} ON PORT: ${PORT}`)
 })
 
+// CORS
+app.use(cors())
+
+// Rate limiting
+const limiter = rateLimit({
+    windowMs: 10 * 60 * 1000,
+    max: 100,
+})
+
+app.use(limiter)
+
 // Model
 const Movie = require("./model")
 
+// Middlware
+const { advanceQuerying } = require("./middleware")
+
 // Routes
+
+// @desc    Get a random movie
+// @routes  GET /random
+// @access  Public
 app.get("/random", async (req, res) => {
     try {
         const result = await Movie.aggregate([
@@ -33,12 +53,22 @@ app.get("/random", async (req, res) => {
                 $sample: { size: 1 },
             },
         ])
+
+        if (!result.length) {
+            return res
+                .status(400)
+                .json({ message: "Unable to find the resource" })
+        }
+
         res.status(200).json(result)
     } catch (error) {
         res.status(400).json({ error: "Cannot fetch" })
     }
 })
 
+// @desc    Get/find movie by name
+// @routes  GET /movie/:name
+// @access  Public
 app.get("/movie/:name", async (req, res) => {
     try {
         const result = await Movie.aggregate([
@@ -48,12 +78,24 @@ app.get("/movie/:name", async (req, res) => {
         ]).collation({ locale: "en", strength: 2 })
 
         if (!result.length) {
-            return res
-                .status(400)
-                .json({ message: "Unable to find the resource" })
+            return res.status(400).json({
+                message:
+                    "Oops, the requested movie does not exist in our database.",
+            })
         }
 
         res.status(200).json(result)
+    } catch (error) {
+        res.status(400).json({ error: "Cannot fetch" })
+    }
+})
+
+// @desc    Get/find 10 movies sorted by IMDB rating
+// @routes  GET /movies
+// @access  Public
+app.get("/movies/", advanceQuerying(Movie), async (req, res) => {
+    try {
+        res.status(200).json(res.advanceQuerying)
     } catch (error) {
         res.status(400).json({ error: "Cannot fetch" })
     }

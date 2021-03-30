@@ -1,13 +1,12 @@
 const mongoose = require("mongoose")
 
 const MovieSchema = new mongoose.Schema({
-    posterLink: String,
     name: String,
     releaseYear: Number,
     certificate: String,
     runtime: String,
     genre: String,
-    imdbRating: Number,
+    imdbRating: { type: Number, index: true },
     overview: String,
     metaScore: String,
     director: String,
