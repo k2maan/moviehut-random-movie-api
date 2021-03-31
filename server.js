@@ -49,6 +49,9 @@ app.get("/api/random", async (req, res) => {
     try {
         const result = await Movie.aggregate([
             {
+                $unset: "_id",
+            },
+            {
                 $sample: { size: 1 },
             },
         ])
@@ -71,6 +74,9 @@ app.get("/api/random", async (req, res) => {
 app.get("/api/movie/:name", async (req, res) => {
     try {
         const result = await Movie.aggregate([
+            {
+                $unset: "_id",
+            },
             {
                 $match: { name: req.params.name },
             },
