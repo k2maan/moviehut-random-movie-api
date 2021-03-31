@@ -1,8 +1,8 @@
 {
   "name": "Random-Movie-API",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Random movie API.",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
