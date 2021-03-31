@@ -1,6 +1,5 @@
 const express = require("express")
 const dotenv = require("dotenv")
-const cors = require("cors")
 const morgan = require("morgan")
 const connectDB = require("./config/db")
 const cors = require("cors")
@@ -46,7 +45,7 @@ const { advanceQuerying } = require("./middleware")
 // @desc    Get a random movie
 // @routes  GET /random
 // @access  Public
-app.get("/random", async (req, res) => {
+app.get("/api/random", async (req, res) => {
     try {
         const result = await Movie.aggregate([
             {
@@ -69,7 +68,7 @@ app.get("/random", async (req, res) => {
 // @desc    Get/find movie by name
 // @routes  GET /movie/:name
 // @access  Public
-app.get("/movie/:name", async (req, res) => {
+app.get("/api/movie/:name", async (req, res) => {
     try {
         const result = await Movie.aggregate([
             {
@@ -93,7 +92,7 @@ app.get("/movie/:name", async (req, res) => {
 // @desc    Get/find 10 movies sorted by IMDB rating
 // @routes  GET /movies
 // @access  Public
-app.get("/movies/", advanceQuerying(Movie), async (req, res) => {
+app.get("/api/movies/", advanceQuerying(Movie), async (req, res) => {
     try {
         res.status(200).json(res.advanceQuerying)
     } catch (error) {
