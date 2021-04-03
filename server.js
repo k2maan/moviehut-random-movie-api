@@ -49,9 +49,6 @@ app.get("/api/random", async (req, res) => {
     try {
         const result = await Movie.aggregate([
             {
-                $unset: "_id",
-            },
-            {
                 $sample: { size: 1 },
             },
         ])
@@ -62,7 +59,7 @@ app.get("/api/random", async (req, res) => {
                 .json({ message: "Unable to find the resource" })
         }
 
-        res.status(200).json(result)
+        res.status(200).json(result[0])
     } catch (error) {
         res.status(400).json({ error: "Cannot fetch" })
     }
@@ -75,9 +72,6 @@ app.get("/api/movie/:name", async (req, res) => {
     try {
         const result = await Movie.aggregate([
             {
-                $unset: "_id",
-            },
-            {
                 $match: { name: req.params.name },
             },
         ]).collation({ locale: "en", strength: 2 })
@@ -89,7 +83,7 @@ app.get("/api/movie/:name", async (req, res) => {
             })
         }
 
-        res.status(200).json(result)
+        res.status(200).json(result[0])
     } catch (error) {
         res.status(400).json({ error: "Cannot fetch" })
     }
