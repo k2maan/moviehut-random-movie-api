@@ -1,4 +1,4 @@
-# MovieQue - Random Movie API
+# MovieHut - Random Movie API
 
 **_MovieQue_** is a **_free and open source_**, Node.js REST API. There are three endpoints, `/random`, `/movie/:name`, and `/movies`, all explained below.
 
@@ -6,7 +6,7 @@ The database includs top 1000 rated movies from IMDb. **_Feel free to use and/or
 
 ## API Documentation
 
-> ### **Random movie**
+> ## **Random movie**
 
 ```
 GET /api/random
@@ -31,7 +31,7 @@ GET /api/random
 ]
 ```
 
-> ### **Movie by name**
+> ## **Movie by name**
 
 ```
 GET /api/movie/:name
@@ -56,7 +56,7 @@ GET /api/movie/:name
 ]
 ```
 
-> ### **List of movies sorted by IMDb Rating**
+> ## **List of movies sorted by IMDb Rating**
 
 ```
 GET /api/movies
