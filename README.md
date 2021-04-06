@@ -1,5 +1,7 @@
 # 🎬 **MovieHut - Random Movie API**
 
+![moviehut-wide](https://user-images.githubusercontent.com/59442907/113717489-4b5fc700-9709-11eb-980c-cb6f83ed670e.jpg)
+
 **_MovieHut_** is a **_free and open source_**, Node.js REST API, a mini-project I did for fun really. It has three endpoints, `/random`, `/movie/:name`, and `/movies`, all explained below.
 
 The database includs top 1000 rated movies from IMDb. **_Feel free to use and/or improve on this project!_**
