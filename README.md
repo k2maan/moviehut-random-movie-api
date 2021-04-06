@@ -4,7 +4,7 @@
 
 The database includs top 1000 rated movies from IMDb. **_Feel free to use and/or improve on this project!_**
 
-**Deployment to domain and examples are still to be added.** Meanwhile the API is accessible [here](http://54.144.219.83/api/random).
+**Domain and usage/examples in the docs are on my TODO.** Meanwhile the API is accessible [here](http://3.86.45.46/api/random).
 
 ## **API Documentation**
 
