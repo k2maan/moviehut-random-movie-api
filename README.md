@@ -2,7 +2,7 @@
 
 ![moviehut-wide](https://user-images.githubusercontent.com/59442907/113717489-4b5fc700-9709-11eb-980c-cb6f83ed670e.jpg)
 
-**MovieHut** is a **free and open source**, Node.js REST API, a mini-project I did for fun really. It has **three endpoints -** **`/random`**, **`/movie/:name`**, and **`/movies`**, all explained below.
+**[MovieHut](https://moviehut.tech/api/random)** is a **free and open source**, Node.js REST API, a mini-project I did for fun really. It has **three endpoints -** **`/random`**, **`/movie/:name`**, and **`/movies`**, all explained below.
 
 ## **Server and deployment**
 
