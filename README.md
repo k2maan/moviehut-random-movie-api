@@ -20,7 +20,7 @@ The API is accessible **_[here](https://moviehut.tech/api/random)_**. **See the 
 GET /api/random
 ```
 
-> ## **[See in browser](https://moviehut.tech/api/random)**
+> ### **[See in browser](https://moviehut.tech/api/random)**
 
 > ### Example Response
 
@@ -45,7 +45,7 @@ GET /api/random
 GET /api/movie/:name
 ```
 
-> ## **[See in browser](https://moviehut.tech/api/fight%20club)**
+> ### **[See in browser](https://moviehut.tech/api/fight%20club)**
 
 > ### Example Response
 
@@ -70,7 +70,7 @@ GET /api/movie/:name
 GET /api/movies
 ```
 
-> ## **[See in browser](https://moviehut.tech/api/movies?page=5&limit=5)**
+> ### **[See in browser](https://moviehut.tech/api/movies?page=5&limit=5)**
 
 > ### Query parameters
 
