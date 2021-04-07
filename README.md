@@ -2,21 +2,27 @@
 
 ![moviehut-wide](https://user-images.githubusercontent.com/59442907/113717489-4b5fc700-9709-11eb-980c-cb6f83ed670e.jpg)
 
-**_MovieHut_** is a **_free and open source_**, Node.js REST API, a mini-project I did for fun really. It has three endpoints, `/random`, `/movie/:name`, and `/movies`, all explained below.
+**MovieHut** is a **free and open source**, Node.js REST API, a mini-project I did for fun really. It has **three endpoints -** **`/random`**, **`/movie/:name`**, and **`/movies`**, all explained below.
 
-The database includs top 1000 rated movies from IMDb. **_Feel free to use and/or improve on this project!_**
+## **Server and deployment**
 
-**Domain and usage/examples in the docs are on my TODO.** Meanwhile the API is accessible [here](http://3.86.45.46/api/random).
+The code is running on my **free-tier EC2**. Domain from **.tech** domains routed using **Route 53**.
+
+Deployed on **MongoDB Atlas**, the database includs **top 1000 rated movies from IMDb**.
+
+The API is accessible **_[here](https://moviehut.tech/api/random)_**. **See the docs for further examples of usage on other endpoints.**
 
 ## **API Documentation**
 
 > ## **Random movie**
 
-```
+```HTTP
 GET /api/random
 ```
 
-> ### Response
+> ## **[See in browser](https://moviehut.tech/api/random)**
+
+> ### Example Response
 
 ```json
 {
@@ -35,11 +41,13 @@ GET /api/random
 
 > ## **Movie by name**
 
-```
+```HTTP
 GET /api/movie/:name
 ```
 
-> ### Response
+> ## **[See in browser](https://moviehut.tech/api/fight%20club)**
+
+> ### Example Response
 
 ```json
 {
@@ -58,19 +66,23 @@ GET /api/movie/:name
 
 > ## **List of movies sorted by IMDb Rating**
 
-```
+```HTTP
 GET /api/movies
 ```
 
+> ## **[See in browser](https://moviehut.tech/api/movies?page=5&limit=5)**
+
 > ### Query parameters
 
-| **_Parameter_** | **_Type_** | **_Description_**                                                                       |
-| --------------- | ---------- | --------------------------------------------------------------------------------------- |
-| **limit**       | Number     | `Minimum: 1`, `Maximum: 100`, `Default: 10` <br> The number to show at once (per page). |
-| **page**        | Number     | `Minimum: 1`, `Maximum: 100`, `Default: 1` <br> The page no. for the results            |
-| **select**      | String     | `Minimum: 1`, `Maximum: 100`, `Default: 1` <br> Fetch only particular feilds for the    |
+| **_Parameter_** | **_Type_** | **_Description_**                                                                                                                              | **_Example_**                                                                 |
+| --------------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| **limit**       | Number     | `Minimum: 1`, `Maximum: 100`, `Default: 10` <br> The number of movies to fetch at once per page                                                | [See in browser](https://moviehut.tech/api/movies?limit=8)                    |
+| **page**        | Number     | `Minimum: 1`, `Maximum: 100`, `Default: 1` <br> The page no. for the results                                                                   | [See in browser](https://moviehut.tech/api/movies?select=name&page=5&limit=5) |
+| **select**      | String     | `Minimum: 1`, `Maximum: 100`, `Default: 1` <br> Fetch only the selected/particular feilds for the movie. Must be comma seperated (see example) | [See in browser](https://moviehut.tech/api/movies?select=name,imdbRating)     |
 
-> ### Response
+> ### Example Response
+
+The data array containes 5 (the limit we give) objects...
 
 ```json
 {
@@ -82,7 +94,7 @@ GET /api/movies
         },
         "prev": {
             "page": 4,
-            "limit": 10
+            "limit": 5
         }
     },
     "data": [{}, {}, {}, {}, {}]
