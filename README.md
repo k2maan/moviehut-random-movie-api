@@ -78,7 +78,7 @@ GET /api/movies
 | --------------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
 | **limit**       | Number     | `Minimum: 1`, `Maximum: 100`, `Default: 10` <br> The number of movies to fetch at once per page                                                | [See in browser](https://moviehut.tech/api/movies?limit=8)                    |
 | **page**        | Number     | `Minimum: 1`, `Maximum: 100`, `Default: 1` <br> The page no. for the results                                                                   | [See in browser](https://moviehut.tech/api/movies?select=name&page=5&limit=5) |
-| **select**      | String     | `Minimum: 1`, `Maximum: 100`, `Default: 1` <br> Fetch only the selected/particular feilds for the movie. Must be comma seperated (see example) | [See in browser](https://moviehut.tech/api/movies?select=name,imdbRating)     |
+| **select**      | String     | Fetch only the selected/particular feilds for the movie. Must be comma seperated (see example) | [See in browser](https://moviehut.tech/api/movies?select=name,imdbRating)     |
 
 > ### Example Response
 
