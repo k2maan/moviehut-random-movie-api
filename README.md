@@ -1,4 +1,4 @@
-# 🎬 **MovieHut - Random Movie API**
+# 🎞 **MovieHut - Random Movie API**
 
 ![moviehut-wide](https://user-images.githubusercontent.com/59442907/113717489-4b5fc700-9709-11eb-980c-cb6f83ed670e.jpg)
 
