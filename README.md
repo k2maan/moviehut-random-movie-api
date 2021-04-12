@@ -4,6 +4,14 @@
 
 **[MovieHut](https://moviehut.tech/api/random)** is a **free and open source**, Node.js REST API, a mini-project I did for fun really. It has **three endpoints -** **`/random`**, **`/movie/:name`**, and **`/movies`**, all explained below.
 
+-   [Server and deployment](#server-and-deployment)
+-   [API Documentation](#api-documentation)
+    -   [Random movie](#random-movie)
+    -   [Movie by name](#movie-by-name)
+    -   [List of movies sorted by IMDb Rating](#list-of-movies-sorted-by-imdb-rating)
+    -   [Local setup](#local-setup)
+-   [Contributing](#contributing)
+
 ## **Server and deployment**
 
 The code is running on my **free-tier EC2**. Domain from **.tech** domains routed using **Route 53**.
@@ -74,11 +82,11 @@ GET /api/movies
 
 > ### Query parameters
 
-| **_Parameter_** | **_Type_** | **_Description_**                                                                                                                              | **_Example_**                                                                 |
-| --------------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| **limit**       | Number     | `Minimum: 1`, `Maximum: 100`, `Default: 10` <br> The number of movies to fetch at once per page                                                | [See in browser](https://moviehut.tech/api/movies?limit=8)                    |
-| **page**        | Number     | `Minimum: 1`, `Maximum: 100`, `Default: 1` <br> The page no. for the results                                                                   | [See in browser](https://moviehut.tech/api/movies?select=name&page=5&limit=5) |
-| **select**      | String     | Fetch only the selected/particular feilds for the movie. Must be comma seperated (see example) | [See in browser](https://moviehut.tech/api/movies?select=name,imdbRating)     |
+| **_Parameter_** | **_Type_** | **_Description_**                                                                               | **_Example_**                                                                 |
+| --------------- | ---------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| **limit**       | Number     | `Minimum: 1`, `Maximum: 100`, `Default: 10` <br> The number of movies to fetch at once per page | [See in browser](https://moviehut.tech/api/movies?limit=8)                    |
+| **page**        | Number     | `Minimum: 1`, `Maximum: 100`, `Default: 1` <br> The page no. for the results                    | [See in browser](https://moviehut.tech/api/movies?select=name&page=5&limit=5) |
+| **select**      | String     | Fetch only the selected/particular feilds for the movie. Must be comma seperated (see example)  | [See in browser](https://moviehut.tech/api/movies?select=name,imdbRating)     |
 
 > ### Example Response
 
@@ -100,3 +108,53 @@ The data array containes 5 (the limit we give) objects...
     "data": [{}, {}, {}, {}, {}]
 }
 ```
+
+## **Local setup**
+
+> ## **Requirements**
+
+Make sure you are atleast using the following versions:
+
+-   Node: 14.5.5
+-   npm: 6.14.11
+-   MongoDB: 4.4.2
+
+> ## **Database and Environment variables**
+
+-   Create a MongoDB database locally or on Atlas
+
+-   Seed the db using mongoimport (or some other way your prefer)
+
+-   Create a file named `config.env` in the `config` folder. Add the following variables with your parameters:
+
+```.env
+NODE_ENV=<your-enviroment>
+
+PORT=<port>
+
+MONGO_URI=<your-local-or-atlas-mongodb-uri>
+```
+
+> ## **Installing dependencies and starting the server**
+
+-   Do the good old:
+
+```
+npm i && nodemon server
+```
+
+## **Contributing**
+
+All contributions, from code to docs' improvement are more than welcome. To do so you can:
+
+-   Fork the repo
+
+-   Clone the forked repo on your local machine
+
+-   Create a new branch from master
+
+-   Do your thing and commit your changes
+
+-   Push the changes to your fork
+
+-   Add a pull request on the project and wait until we review and merge them
