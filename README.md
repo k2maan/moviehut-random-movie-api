@@ -9,7 +9,7 @@
     -   [Random movie](#random-movie)
     -   [Movie by name](#movie-by-name)
     -   [List of movies sorted by IMDb Rating](#list-of-movies-sorted-by-imdb-rating)
-    -   [Local setup](#local-setup)
+-   [Local setup](#local-setup)
 -   [Contributing](#contributing)
 
 ## **Server and deployment**
