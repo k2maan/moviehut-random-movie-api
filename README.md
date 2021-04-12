@@ -2,17 +2,19 @@
 
 ![moviehut-wide](https://user-images.githubusercontent.com/59442907/113717489-4b5fc700-9709-11eb-980c-cb6f83ed670e.jpg)
 
-**[MovieHut](https://moviehut.tech/api/random)** is a **free and open source**, Node.js REST API, a mini-project I did for fun really. It has **three endpoints -** **`/random`**, **`/movie/:name`**, and **`/movies`**, all explained below.
+**[MovieHut](https://moviehut.tech/api/random)** is a **free and open source**, Node.js REST API, a mini-project I did for fun really. It has **three endpoints :** **`/random`**, **`/movie/:name`**, and **`/movies`**, all explained below.
 
--   [Server and deployment](#server-and-deployment)
--   [API Documentation](#api-documentation)
-    -   [Random movie](#random-movie)
-    -   [Movie by name](#movie-by-name)
-    -   [List of movies sorted by IMDb Rating](#list-of-movies-sorted-by-imdb-rating)
--   [Local setup](#local-setup)
--   [Contributing](#contributing)
+## **📌 Index**
 
-## **Server and deployment**
+-   🚀 [**Server and deployment**](#🚀-server-and-deployment)
+-   📝 [**API Documentation**](#📝-api-documentation)
+    -   [**Random movie**](#random-movie)
+    -   [**Movie by name**](#movie-by-name)
+    -   [**List of movies sorted by IMDb Rating**](#list-of-movies-sorted-by-imdb-rating)
+-   🔧 [**Local setup**](#🔧-local-setup)
+-   👬🏽 [**Contributing**](#👬🏽-contributing)
+
+## **🚀 Server and deployment**
 
 The code is running on my **free-tier EC2**. Domain from **.tech** domains routed using **Route 53**.
 
@@ -20,7 +22,7 @@ Deployed on **MongoDB Atlas**, the database includs **top 1000 rated movies from
 
 The API is accessible **_[here](https://moviehut.tech/api/random)_**. **See the docs for further examples of usage on other endpoints.**
 
-## **API Documentation**
+## 📝 **API Documentation**
 
 > ## **Random movie**
 
@@ -109,7 +111,7 @@ The data array containes 5 (the limit we give) objects...
 }
 ```
 
-## **Local setup**
+## **🔧 Local setup**
 
 > ## **Requirements**
 
@@ -143,7 +145,7 @@ MONGO_URI=<your-local-or-atlas-mongodb-uri>
 npm i && nodemon server
 ```
 
-## **Contributing**
+## **👬🏽 Contributing**
 
 All contributions, from code to docs' improvement are more than welcome. To do so you can:
 
