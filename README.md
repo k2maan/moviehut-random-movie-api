@@ -2,7 +2,7 @@
 
 ![moviehut-wide](https://user-images.githubusercontent.com/59442907/113717489-4b5fc700-9709-11eb-980c-cb6f83ed670e.jpg)
 
-**[MovieHut](https://moviehut.tech/api/random)** is a **free and open source**, Node.js REST API, a mini-project I did for fun really. It has **three endpoints :** **`/random`**, **`/movie/:name`**, and **`/movies`**, all explained below.
+**[MovieHut](https://k2maan-moviehut.herokuapp.com/api/random)** is a **free and open source**, Node.js REST API, a mini-project I did for fun really. It has **three endpoints :** **`/random`**, **`/movie/:name`**, and **`/movies`**, all explained below.
 
 ## **📌 Index**
 
@@ -20,7 +20,7 @@ The code is running on my **free-tier EC2**. Domain from **.tech** domains route
 
 Deployed on **MongoDB Atlas**, the database includs **top 1000 rated movies from IMDb**.
 
-The API is accessible **_[here](https://moviehut.tech/api/random)_**. **See the docs for further examples of usage on other endpoints.**
+The API is accessible **_[here](https://k2maan-moviehut.herokuapp.com/api/random)_**. **See the docs for further examples of usage on other endpoints.**
 
 ## **API Documentation**
 
@@ -30,7 +30,7 @@ The API is accessible **_[here](https://moviehut.tech/api/random)_**. **See the 
 GET /api/random
 ```
 
-> ### **[See in browser](https://moviehut.tech/api/random)**
+> ### **[See in browser](https://k2maan-moviehut.herokuapp.com/api/random)**
 
 > ### Example Response
 
@@ -55,7 +55,7 @@ GET /api/random
 GET /api/movie/:name
 ```
 
-> ### **[See in browser](https://moviehut.tech/api/fight%20club)**
+> ### **[See in browser](https://k2maan-moviehut.herokuapp.com/api/movie/fight%20club)**
 
 > ### Example Response
 
@@ -80,15 +80,15 @@ GET /api/movie/:name
 GET /api/movies
 ```
 
-> ### **[See in browser](https://moviehut.tech/api/movies?page=5&limit=5)**
+> ### **[See in browser](https://k2maan-moviehut.herokuapp.com/api/movies?page=5&limit=5)**
 
 > ### Query parameters
 
-| **_Parameter_** | **_Type_** | **_Description_**                                                                               | **_Example_**                                                                 |
-| --------------- | ---------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| **limit**       | Number     | `Minimum: 1`, `Maximum: 100`, `Default: 10` <br> The number of movies to fetch at once per page | [See in browser](https://moviehut.tech/api/movies?limit=8)                    |
-| **page**        | Number     | `Minimum: 1`, `Maximum: 100`, `Default: 1` <br> The page no. for the results                    | [See in browser](https://moviehut.tech/api/movies?select=name&page=5&limit=5) |
-| **select**      | String     | Fetch only the selected/particular feilds for the movie. Must be comma seperated (see example)  | [See in browser](https://moviehut.tech/api/movies?select=name,imdbRating)     |
+| **_Parameter_** | **_Type_** | **_Description_**                                                                               | **_Example_**                                                                                 |
+| --------------- | ---------- | ----------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| **limit**       | Number     | `Minimum: 1`, `Maximum: 100`, `Default: 10` <br> The number of movies to fetch at once per page | [See in browser](https://k2maan-moviehut.herokuapp.com/api/movies?limit=8)                    |
+| **page**        | Number     | `Minimum: 1`, `Maximum: 100`, `Default: 1` <br> The page no. for the results                    | [See in browser](https://k2maan-moviehut.herokuapp.com/api/movies?select=name&page=5&limit=5) |
+| **select**      | String     | Fetch only the selected/particular feilds for the movie. Must be comma seperated (see example)  | [See in browser](https://k2maan-moviehut.herokuapp.com/api/movies?select=name,imdbRating)     |
 
 > ### Example Response
 
