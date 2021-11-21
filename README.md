@@ -16,7 +16,7 @@
 
 ## **Server and deployment**
 
-The code is running on my **free-tier EC2**. Domain from **.tech** domains routed using **Route 53**.
+Deployed on **Heroku** (Previously on EC2)
 
 Deployed on **MongoDB Atlas**, the database includs **top 1000 rated movies from IMDb**.
 
